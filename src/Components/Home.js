@@ -1,14 +1,18 @@
 import styled from "styled-components";
-import Header from "./Header";
 import LeftSide from "./LeftSide";
 import Main from "./Main";
 import RightSide from "./RightSide";
+import Header from "./Header";
+import { connect } from "react-redux";
+import { Navigate } from "react-router-dom";
 
 const Home = (props) => {
+  const shouldRedirect = props.user;
   return (
     <>
-      <Header />
       <Container>
+        {!shouldRedirect && <Navigate replace to="/" />}
+        <Header />
         <Section>
           <h5>
             <a href="/">Hiring in a hurry</a>
@@ -75,4 +79,10 @@ const Layout = styled.div`
   }
 `;
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    user: state.userReducer.user,
+  };
+};
+
+export default connect(mapStateToProps)(Home);
