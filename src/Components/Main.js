@@ -40,7 +40,7 @@ const Main = (props) => {
               {props.user && props.user.photoURL ? (
                 <img src={props.user.photoURL} alt="" />
               ) : (
-                <img src="/images/user.svg" alt="user" />
+                <img src="/images/user.svg" alt="" />
               )}
 
               <button onClick={handleClick} disabled={props.loading ? true : false}>
@@ -234,6 +234,7 @@ const ShareActor = styled.div`
     img {
       width: 48px;
       height: 48px;
+      border-radius: 50%;
     }
     & > div {
       display: flex;
