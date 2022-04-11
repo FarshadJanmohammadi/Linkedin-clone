@@ -13,7 +13,7 @@ Build LinkedIn with React JS (Firebase + Styled Components + Redux)
 
 
 
-## Demo Online
+## Demo Online (First Turn on VPN)
 
 
 
